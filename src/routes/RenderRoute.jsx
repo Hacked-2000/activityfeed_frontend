@@ -7,6 +7,7 @@ import Layout from "../layout/index";
 
 const FeedPage = lazy(() => import("../pages/FeedPage"));
 const PostActivityPage = lazy(() => import("../pages/PostActivityPage"));
+const AnswersPage = lazy(() => import("../pages/AnswersPage"));
 
 function RenderRoute() {
   return (
@@ -25,6 +26,7 @@ function RenderRoute() {
           <Routes>
             <Route path="/" element={<Layout><FeedPage /></Layout>} />
             <Route path="/post" element={<Layout><PostActivityPage /></Layout>} />
+            <Route path="/answers" element={<Layout><AnswersPage /></Layout>} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Suspense>

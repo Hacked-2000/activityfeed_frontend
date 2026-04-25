@@ -1,16 +1,47 @@
-# React + Vite
+# Activity Feed — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + Vite SPA for the activity feed UI.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19 + Vite
+- React Router v7
+- Redux Toolkit
+- Axios
 
-## React Compiler
+## Pages
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Route | Description |
+|-------|-------------|
+| / | Live activity feed with infinite scroll |
+| /post | Post a new activity |
+| /answers | Assignment answers |
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Cursor-based infinite scroll via IntersectionObserver
+- Real-time polling every 15s — prepends new items without resetting the feed
+- Filter by activity type
+- Fully responsive
+
+## Setup
+
+```bash
+npm install
+cp .env.example .env   # set VITE_API_URL
+npm run dev
+```
+
+## Environment Variables
+
+```
+VITE_API_URL=http://localhost:4000/api/v1
+```
+
+For production, set `VITE_API_URL` to your deployed backend URL in Render's environment variables.
+
+## Build
+
+```bash
+npm run build   # outputs to dist/
+```
